@@ -15,14 +15,14 @@ const technologies = [
 
 export default function TechStack() {
   return (
-    <section className="py-20 px-6 border-t border-b border-border">
+    <section className="py-14 px-6 border-t border-b border-border">
       <div className="max-w-6xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-xs uppercase tracking-[0.2em] text-muted mb-10"
+          className="text-center text-xs uppercase tracking-[0.2em] text-muted mb-6"
         >
           Our tech stack
         </motion.p>

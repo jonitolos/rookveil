@@ -26,26 +26,26 @@ const values = [
 
 export default function About() {
   return (
-    <section id="about" className="py-32 px-6 relative">
+    <section id="about" className="py-20 md:py-24 px-6 relative">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-start">
           {/* Left column */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
+            initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.7 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.6 }}
           >
-            <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
               About
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
               A studio built on{" "}
               <span className="gradient-text">obsession with quality</span>
             </h2>
-            <div className="space-y-4 text-muted text-sm leading-relaxed">
+            <div className="space-y-3.5 text-muted text-sm leading-relaxed">
               <p>
                 Rookveil is a boutique web development studio based in
                 Vilnius, Lithuania, founded by Jonas Losis. With over 12
@@ -69,18 +69,18 @@ export default function About() {
           </motion.div>
 
           {/* Right column — values */}
-          <div className="space-y-6">
+          <div className="space-y-3">
             {values.map((value, i) => (
               <motion.div
                 key={value.title}
-                initial={{ opacity: 0, x: 30 }}
+                initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.12 }}
-                className="flex gap-4 p-5 rounded-xl border border-border bg-surface/30"
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group flex gap-4 p-4 rounded-xl border border-border bg-surface/30 hover:bg-surface-light hover:border-accent/20 transition-all duration-300"
               >
-                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <value.icon size={18} className="text-accent-light" />
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
+                  <value.icon size={16} className="text-accent-light" />
                 </div>
                 <div>
                   <h3 className="text-sm font-semibold mb-1">{value.title}</h3>

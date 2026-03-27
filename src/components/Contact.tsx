@@ -26,47 +26,46 @@ function LinkedinIcon({ size = 14, className = "" }: { size?: number; className?
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 px-6 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-accent/5 rounded-full blur-[128px] pointer-events-none" />
+    <section id="contact" className="py-20 md:py-24 px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-3xl mx-auto relative">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.7 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.6 }}
           className="text-center"
         >
-          <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
             Contact
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
             Let&apos;s build something{" "}
             <span className="gradient-text">remarkable</span>
           </h2>
-          <p className="text-muted max-w-lg mx-auto mb-10 leading-relaxed">
-            Have a project in mind? We&apos;d love to hear about it. Drop us a
-            line and we&apos;ll get back to you within 24 hours.
+          <p className="text-muted max-w-md mx-auto mb-8 text-sm leading-relaxed">
+            Have a project in mind? Drop us a line and we&apos;ll get back to you within 24 hours.
           </p>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="rounded-2xl border border-border bg-surface/50 p-8 md:p-10"
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="rounded-2xl border border-border bg-surface/40 p-6 md:p-8"
         >
           <form
             action="https://formspree.io/f/placeholder"
             method="POST"
-            className="space-y-5"
+            className="space-y-4"
           >
-            <div className="grid md:grid-cols-2 gap-5">
+            <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-xs text-muted mb-2 uppercase tracking-wider"
+                  className="block text-[10px] text-muted mb-1.5 uppercase tracking-widest"
                 >
                   Name
                 </label>
@@ -75,14 +74,14 @@ export default function Contact() {
                   id="name"
                   name="name"
                   required
-                  className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+                  className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
                   placeholder="Your name"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs text-muted mb-2 uppercase tracking-wider"
+                  className="block text-[10px] text-muted mb-1.5 uppercase tracking-widest"
                 >
                   Email
                 </label>
@@ -91,7 +90,7 @@ export default function Contact() {
                   id="email"
                   name="email"
                   required
-                  className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+                  className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
                   placeholder="you@company.com"
                 />
               </div>
@@ -99,7 +98,7 @@ export default function Contact() {
             <div>
               <label
                 htmlFor="message"
-                className="block text-xs text-muted mb-2 uppercase tracking-wider"
+                className="block text-[10px] text-muted mb-1.5 uppercase tracking-widest"
               >
                 Message
               </label>
@@ -107,14 +106,14 @@ export default function Contact() {
                 id="message"
                 name="message"
                 required
-                rows={5}
-                className="w-full bg-background border border-border rounded-lg px-4 py-3 text-sm text-foreground placeholder:text-muted/50 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
+                rows={4}
+                className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
                 placeholder="Tell us about your project..."
               />
             </div>
             <button
               type="submit"
-              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 px-8 py-3 rounded-lg bg-accent hover:bg-accent-light text-white text-sm font-medium transition-all duration-200"
+              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 px-7 py-2.5 rounded-lg bg-accent hover:bg-accent-light text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-accent/20"
             >
               Send message
               <ArrowRight
@@ -124,34 +123,34 @@ export default function Contact() {
             </button>
           </form>
 
-          <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center gap-4 text-sm text-muted">
+          <div className="mt-6 pt-5 border-t border-border flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-xs text-muted">
             <a
               href="mailto:jonas@rookveil.lt"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
-              <Mail size={14} className="text-accent-light" />
-              <span>jonas@rookveil.lt</span>
+              <Mail size={12} className="text-accent-light" />
+              jonas@rookveil.lt
             </a>
             <span className="hidden sm:block text-border">|</span>
             <a
-              href="tel:+37060000000"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
+              href="tel:+37067308538"
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
-              <Phone size={14} className="text-accent-light" />
-              <span>+370 600 00000</span>
+              <Phone size={12} className="text-accent-light" />
+              +370 673 08538
             </a>
             <span className="hidden sm:block text-border">|</span>
             <a
               href="https://www.linkedin.com/in/jonas-losis/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-foreground transition-colors"
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
-              <LinkedinIcon size={14} className="text-accent-light" />
-              <span>LinkedIn</span>
+              <LinkedinIcon size={12} className="text-accent-light" />
+              LinkedIn
             </a>
             <span className="hidden sm:block text-border">|</span>
-            <span>Based in Vilnius, Lithuania</span>
+            <span>Vilnius, Lithuania</span>
           </div>
         </motion.div>
       </div>

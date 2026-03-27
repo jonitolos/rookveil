@@ -75,7 +75,7 @@ export default function Footer() {
               <Mail size={16} />
             </a>
             <a
-              href="tel:+37060000000"
+              href="tel:+37067308538"
               className="hover:text-foreground transition-colors"
               aria-label="Phone"
             >
