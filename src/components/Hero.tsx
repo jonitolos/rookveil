@@ -75,12 +75,11 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-20 grid grid-cols-3 gap-8 max-w-md mx-auto"
+          className="mt-20 grid grid-cols-2 gap-8 max-w-sm mx-auto"
         >
           {[
-            { value: "12+", label: "Years experience" },
-            { value: "50+", label: "Projects delivered" },
-            { value: "99%", label: "Client satisfaction" },
+            { value: "12+", label: "Years in tech & logistics" },
+            { value: "Next.js", label: "React & Supabase stack" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl font-bold gradient-text">

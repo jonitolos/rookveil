@@ -1,7 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight, Mail, Phone } from "lucide-react";
+
+function LinkedinIcon({ size = 14, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  );
+}
 
 export default function Contact() {
   return (
@@ -104,12 +125,33 @@ export default function Contact() {
           </form>
 
           <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center gap-4 text-sm text-muted">
-            <div className="flex items-center gap-2">
+            <a
+              href="mailto:jonas@rookveil.lt"
+              className="flex items-center gap-2 hover:text-foreground transition-colors"
+            >
               <Mail size={14} className="text-accent-light" />
-              <span>info@rookveil.lt</span>
-            </div>
+              <span>jonas@rookveil.lt</span>
+            </a>
             <span className="hidden sm:block text-border">|</span>
-            <span>Based in Lithuania, working globally</span>
+            <a
+              href="tel:+37060000000"
+              className="flex items-center gap-2 hover:text-foreground transition-colors"
+            >
+              <Phone size={14} className="text-accent-light" />
+              <span>+370 600 00000</span>
+            </a>
+            <span className="hidden sm:block text-border">|</span>
+            <a
+              href="https://www.linkedin.com/in/jonas-losis/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-foreground transition-colors"
+            >
+              <LinkedinIcon size={14} className="text-accent-light" />
+              <span>LinkedIn</span>
+            </a>
+            <span className="hidden sm:block text-border">|</span>
+            <span>Based in Vilnius, Lithuania</span>
           </div>
         </motion.div>
       </div>

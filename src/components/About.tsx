@@ -48,19 +48,22 @@ export default function About() {
             <div className="space-y-4 text-muted text-sm leading-relaxed">
               <p>
                 Rookveil is a boutique web development studio based in
-                Lithuania. With over 12 years of experience spanning logistics
-                technology to modern SaaS, we bring a unique blend of
-                business understanding and technical excellence.
+                Vilnius, Lithuania, founded by Jonas Losis. With over 12
+                years of experience in the transport and logistics industry,
+                Jonas brings a rare combination of deep business understanding
+                and modern web development skills.
+              </p>
+              <p>
+                That logistics background means we understand the needs of
+                businesses that move things — fleet management dashboards,
+                customer-facing booking portals, operational tools. We speak
+                the language before writing a single line of code.
               </p>
               <p>
                 We specialize in the modern web stack — Next.js, React,
                 Supabase, and Tailwind CSS — to deliver blazing-fast websites
                 that don&apos;t just look great but perform at the highest level.
-              </p>
-              <p>
-                Every project starts with understanding your goals and ends
-                with a solution that exceeds expectations. No templates, no
-                shortcuts — just clean, custom code.
+                No templates, no shortcuts — just clean, custom code.
               </p>
             </div>
           </motion.div>

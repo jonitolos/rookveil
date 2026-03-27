@@ -6,20 +6,20 @@ import { ArrowUpRight } from "lucide-react";
 const projects = [
   {
     title: "Arx Auto",
-    url: "https://arx-auto.lt",
-    category: "Automotive Platform",
+    url: "https://arx-auto.vercel.app/",
+    category: "Automotive Marketplace",
     description:
-      "A complete automotive marketplace with vehicle listings, advanced search filters, and dealer management. Built for performance with server-side rendering and real-time updates.",
-    tech: ["Next.js", "Supabase", "Tailwind CSS"],
+      "A car marketplace platform with vehicle listings, advanced search and filtering, and dealer tools. Built with server-side rendering, real-time data via Supabase, and optimized for SEO.",
+    tech: ["Next.js", "Supabase", "Tailwind CSS", "TypeScript"],
     gradient: "from-violet-500/20 to-blue-500/20",
   },
   {
     title: "Sintorio",
-    url: "https://sintorio.lt",
-    category: "E-Commerce",
+    url: "https://www.sintorio.com/",
+    category: "AI Video Processing",
     description:
-      "Modern e-commerce platform with a sleek product catalog, smooth checkout experience, and integrated inventory management. Optimized for conversion and mobile-first design.",
-    tech: ["Next.js", "React", "Tailwind CSS"],
+      "An AI-powered video processing platform that lets users clip, edit, and transform video content. Python backend handles the heavy lifting while a clean React frontend keeps the experience smooth.",
+    tech: ["Next.js", "Python", "AI/ML", "Tailwind CSS"],
     gradient: "from-cyan-500/20 to-emerald-500/20",
   },
 ];
