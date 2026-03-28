@@ -3,49 +3,49 @@
 import { motion } from "framer-motion";
 import {
   Globe,
-  ShoppingCart,
+  Layers,
   Palette,
   Search,
+  Smartphone,
   Wrench,
-  Zap,
 } from "lucide-react";
 
 const services = [
   {
     icon: Globe,
-    title: "Web Development",
+    title: "Custom Websites",
     description:
-      "Custom websites built with Next.js and React. Fast, SEO-friendly, and built to scale.",
+      "Every site built from scratch with Next.js and React. No templates, no page builders — just clean, custom code tailored to your business.",
   },
   {
-    icon: ShoppingCart,
-    title: "E-Commerce",
+    icon: Layers,
+    title: "Landing Pages",
     description:
-      "Online stores that convert. Seamless checkout flows and inventory management.",
+      "High-converting landing pages designed to capture leads and drive action. Fast to build, optimized to perform.",
   },
   {
     icon: Palette,
     title: "UI/UX Design",
     description:
-      "Clean, modern interfaces designed around your users. Every pixel is intentional.",
+      "Clean, modern interfaces designed around your users. Every pixel is intentional, every interaction is smooth.",
   },
   {
     icon: Search,
     title: "SEO & Performance",
     description:
-      "Lighthouse-optimized sites that rank. Core Web Vitals tuned for maximum visibility.",
+      "Lighthouse-optimized sites that rank. Core Web Vitals tuned for maximum visibility on Google.",
   },
   {
-    icon: Zap,
-    title: "Web Applications",
+    icon: Smartphone,
+    title: "Responsive Design",
     description:
-      "Full-stack SaaS platforms, dashboards, and tools with real-time data and auth.",
+      "Pixel-perfect on every screen size. Mobile-first approach ensures your site works flawlessly on any device.",
   },
   {
     icon: Wrench,
     title: "Maintenance & Support",
     description:
-      "Ongoing updates, security patches, and feature additions to keep you running smooth.",
+      "Ongoing updates, security patches, and content changes to keep your site running smooth.",
   },
 ];
 
@@ -82,12 +82,12 @@ export default function Services() {
             Services
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Everything you need to{" "}
-            <span className="gradient-text">go live</span>
+            Custom websites that{" "}
+            <span className="gradient-text">stand out</span>
           </h2>
           <p className="text-muted mt-3 max-w-md mx-auto text-sm">
-            We handle the full spectrum of web development so you can focus on
-            growing your business.
+            Every website we build is custom. No WordPress, no templates —
+            just hand-crafted code for your specific needs.
           </p>
         </motion.div>
 
