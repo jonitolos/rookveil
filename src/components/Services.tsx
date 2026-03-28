@@ -2,50 +2,50 @@
 
 import { motion } from "framer-motion";
 import {
-  Globe,
-  Layers,
-  Palette,
-  Search,
+  Code2,
   Smartphone,
-  Wrench,
+  Search,
+  Zap,
+  Palette,
+  Shield,
 } from "lucide-react";
 
-const services = [
+const features = [
   {
-    icon: Globe,
-    title: "Custom Websites",
+    icon: Code2,
+    title: "Built from scratch",
     description:
-      "Every site built from scratch with Next.js and React. No templates, no page builders — just clean, custom code tailored to your business.",
-  },
-  {
-    icon: Layers,
-    title: "Landing Pages",
-    description:
-      "High-converting landing pages designed to capture leads and drive action. Fast to build, optimized to perform.",
+      "No WordPress, no Wix, no templates. Every line of code is written specifically for your business using Next.js and React.",
   },
   {
     icon: Palette,
-    title: "UI/UX Design",
+    title: "Designed to convert",
     description:
-      "Clean, modern interfaces designed around your users. Every pixel is intentional, every interaction is smooth.",
-  },
-  {
-    icon: Search,
-    title: "SEO & Performance",
-    description:
-      "Lighthouse-optimized sites that rank. Core Web Vitals tuned for maximum visibility on Google.",
+      "Clean, modern design that guides visitors toward action. Every element has a purpose — nothing is decoration.",
   },
   {
     icon: Smartphone,
-    title: "Responsive Design",
+    title: "Responsive on every device",
     description:
-      "Pixel-perfect on every screen size. Mobile-first approach ensures your site works flawlessly on any device.",
+      "Mobile-first development ensures your site looks and works flawlessly on phones, tablets, and desktops.",
   },
   {
-    icon: Wrench,
-    title: "Maintenance & Support",
+    icon: Zap,
+    title: "Blazing fast",
     description:
-      "Ongoing updates, security patches, and content changes to keep your site running smooth.",
+      "Sub-second load times with server-side rendering, optimized images, and edge deployment. Speed is not optional.",
+  },
+  {
+    icon: Search,
+    title: "SEO-ready from day one",
+    description:
+      "Semantic HTML, structured data, meta tags, and Core Web Vitals tuned so Google finds and ranks your site.",
+  },
+  {
+    icon: Shield,
+    title: "Secure & maintained",
+    description:
+      "HTTPS, secure hosting, and ongoing updates included. Your site stays protected and up-to-date after launch.",
   },
 ];
 
@@ -79,15 +79,15 @@ export default function Services() {
           className="text-center mb-12"
         >
           <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
-            Services
+            What you get
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Custom websites that{" "}
-            <span className="gradient-text">stand out</span>
+            Every website we build{" "}
+            <span className="gradient-text">includes</span>
           </h2>
           <p className="text-muted mt-3 max-w-md mx-auto text-sm">
-            Every website we build is custom. No WordPress, no templates —
-            just hand-crafted code for your specific needs.
+            One service, done right. A fully custom website built with modern
+            technology — no shortcuts, no compromises.
           </p>
         </motion.div>
 
@@ -98,18 +98,18 @@ export default function Services() {
           viewport={{ once: true, margin: "-40px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3"
         >
-          {services.map((service) => (
+          {features.map((feature) => (
             <motion.div
-              key={service.title}
+              key={feature.title}
               variants={itemVariants}
               className="group p-5 rounded-xl border border-border bg-surface/40 hover:bg-surface-light hover:border-accent/20 transition-all duration-300"
             >
               <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
-                <service.icon size={18} className="text-accent-light" />
+                <feature.icon size={18} className="text-accent-light" />
               </div>
-              <h3 className="text-sm font-semibold mb-1.5">{service.title}</h3>
+              <h3 className="text-sm font-semibold mb-1.5">{feature.title}</h3>
               <p className="text-xs text-muted leading-relaxed">
-                {service.description}
+                {feature.description}
               </p>
             </motion.div>
           ))}
