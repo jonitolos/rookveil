@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone } from "lucide-react";
+import { useState, type FormEvent } from "react";
+import { ArrowRight, Mail, Phone, Check } from "lucide-react";
 
 function LinkedinIcon({ size = 14, className = "" }: { size?: number; className?: string }) {
   return (
@@ -25,6 +26,23 @@ function LinkedinIcon({ size = 14, className = "" }: { size?: number; className?
 }
 
 export default function Contact() {
+  const [sent, setSent] = useState(false);
+
+  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value;
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+
+    const subject = encodeURIComponent(`New project inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+    window.location.href = `mailto:jonas@rookveil.lt?subject=${subject}&body=${body}`;
+    setSent(true);
+  }
+
   return (
     <section id="contact" className="py-20 md:py-24 px-6 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[300px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
@@ -57,8 +75,7 @@ export default function Contact() {
           className="rounded-2xl border border-border bg-surface/40 p-6 md:p-8"
         >
           <form
-            action="https://formspree.io/f/placeholder"
-            method="POST"
+            onSubmit={handleSubmit}
             className="space-y-4"
           >
             <div className="grid md:grid-cols-2 gap-4">
@@ -113,13 +130,23 @@ export default function Contact() {
             </div>
             <button
               type="submit"
-              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 px-7 py-2.5 rounded-lg bg-accent hover:bg-accent-light text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-accent/20"
+              disabled={sent}
+              className="group w-full md:w-auto inline-flex items-center justify-center gap-2 px-7 py-2.5 rounded-lg bg-accent hover:bg-accent-light disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-accent/20"
             >
-              Send message
-              <ArrowRight
-                size={16}
-                className="group-hover:translate-x-0.5 transition-transform"
-              />
+              {sent ? (
+                <>
+                  <Check size={16} />
+                  Opening email client...
+                </>
+              ) : (
+                <>
+                  Send message
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-0.5 transition-transform"
+                  />
+                </>
+              )}
             </button>
           </form>
 
