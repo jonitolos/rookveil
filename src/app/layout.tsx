@@ -21,6 +21,10 @@ export const metadata: Metadata = {
     "web design",
     "Rookveil",
   ],
+  icons: {
+    icon: "/logo.png",
+    apple: "/logo.png",
+  },
   metadataBase: new URL("https://rookveil.lt"),
   openGraph: {
     title: "Rookveil — Web Development Studio",

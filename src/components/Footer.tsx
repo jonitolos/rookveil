@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
+import Image from "next/image";
 
 function LinkedinIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
   return (
@@ -35,7 +36,14 @@ export default function Footer() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-sm text-muted">
+          <div className="flex items-center gap-2.5 text-sm text-muted">
+            <Image
+              src="/logo.png"
+              alt="Rookveil"
+              width={24}
+              height={24}
+              className="rounded-sm opacity-60"
+            />
             &copy; {new Date().getFullYear()} Rookveil. All rights reserved.
           </div>
 

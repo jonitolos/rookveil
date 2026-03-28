@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const links = [
   { label: "Services", href: "#services" },
@@ -33,8 +34,17 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-lg font-semibold tracking-tight">
-          rookveil<span className="text-accent-light">.lt</span>
+        <a href="#" className="flex items-center gap-2.5">
+          <Image
+            src="/logo.png"
+            alt="Rookveil"
+            width={32}
+            height={32}
+            className="rounded-sm"
+          />
+          <span className="text-lg font-semibold tracking-tight">
+            rookveil<span className="text-accent-light">.lt</span>
+          </span>
         </a>
 
         {/* Desktop links */}
