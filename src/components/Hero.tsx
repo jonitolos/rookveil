@@ -2,10 +2,14 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
+import ParticleField from "./ParticleField";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden grid-bg">
+      {/* Animated particle network */}
+      <ParticleField />
+
       {/* Ambient glow orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-cyan-500/6 rounded-full blur-[100px] pointer-events-none" />
