@@ -1,0 +1,16 @@
+{
+  "name": "Rookveil — Web Development Studio",
+  "short_name": "Rookveil",
+  "description": "Boutique web development studio crafting custom, high-performance websites.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#6d28d9",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

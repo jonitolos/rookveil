@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const inter = Inter({
@@ -25,6 +27,7 @@ export const metadata: Metadata = {
     icon: "/logo.png",
     apple: "/logo.png",
   },
+  manifest: "/manifest.json",
   metadataBase: new URL("https://rookveil.lt"),
   openGraph: {
     title: "Rookveil — Web Development Studio",
@@ -98,6 +101,8 @@ export default function RootLayout({
       </head>
       <body className="min-h-screen bg-background text-foreground noise-bg">
         {children}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
