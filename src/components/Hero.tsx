@@ -2,13 +2,13 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Sparkles } from "lucide-react";
-import ParticleField from "./ParticleField";
+import WireframeScene from "./WireframeScene";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden grid-bg">
-      {/* Animated particle network */}
-      <ParticleField />
+      {/* 3D wireframe scene */}
+      <WireframeScene />
 
       {/* Ambient glow orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
@@ -80,21 +80,21 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-16 flex items-center justify-center gap-8 sm:gap-12"
+          className="mt-16 flex items-center justify-center gap-4 sm:gap-12 flex-wrap"
         >
-          <div className="text-center">
-            <div className="text-xl sm:text-2xl font-bold gradient-text">12+</div>
-            <div className="text-[11px] text-muted mt-0.5">Years in tech &amp; logistics</div>
+          <div className="text-center min-w-0">
+            <div className="text-lg sm:text-2xl font-bold gradient-text">12+</div>
+            <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">Years in tech</div>
           </div>
-          <div className="w-px h-8 bg-border" />
-          <div className="text-center">
-            <div className="text-xl sm:text-2xl font-bold gradient-text">Next.js</div>
-            <div className="text-[11px] text-muted mt-0.5">React &amp; Supabase stack</div>
+          <div className="w-px h-8 bg-border hidden sm:block" />
+          <div className="text-center min-w-0">
+            <div className="text-lg sm:text-2xl font-bold gradient-text">Next.js</div>
+            <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">React &amp; Supabase</div>
           </div>
-          <div className="w-px h-8 bg-border" />
-          <div className="text-center">
-            <div className="text-xl sm:text-2xl font-bold gradient-text">Vilnius</div>
-            <div className="text-[11px] text-muted mt-0.5">Lithuania-based studio</div>
+          <div className="w-px h-8 bg-border hidden sm:block" />
+          <div className="text-center min-w-0">
+            <div className="text-lg sm:text-2xl font-bold gradient-text">Vilnius</div>
+            <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">Lithuania-based</div>
           </div>
         </motion.div>
       </div>
