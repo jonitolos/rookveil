@@ -4,9 +4,35 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 
-export default function CaseStudy() {
+interface CaseStudyProps {
+  id: string;
+  label: string;
+  title: string;
+  titleAccent: string;
+  subtitle: string;
+  url: string;
+  image: string;
+  problem: string;
+  techDecisions: string[];
+  result: string;
+  techStack: string[];
+}
+
+export default function CaseStudy({
+  id,
+  label,
+  title,
+  titleAccent,
+  subtitle,
+  url,
+  image,
+  problem,
+  techDecisions,
+  result,
+  techStack,
+}: CaseStudyProps) {
   return (
-    <section id="case-study" className="py-20 md:py-24 px-6">
+    <section id={id} className="py-20 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -16,19 +42,19 @@ export default function CaseStudy() {
           className="text-center mb-12"
         >
           <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
-            Case study
+            {label}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Arx Auto — <span className="gradient-text">car marketplace</span>
+            {title} <span className="gradient-text">{titleAccent}</span>
           </h2>
           <p className="text-muted mt-3 max-w-lg mx-auto text-sm">
-            A platform I designed, built, and operate. Here&apos;s how and why.
+            {subtitle}
           </p>
         </motion.div>
 
         {/* Full-width screenshot */}
         <motion.a
-          href="https://arx-auto.vercel.app/"
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
           initial={{ opacity: 0, y: 24 }}
@@ -39,8 +65,8 @@ export default function CaseStudy() {
         >
           <div className="aspect-[16/8] md:aspect-[2.4/1] relative bg-surface">
             <Image
-              src="/work/arx-auto.svg"
-              alt="Arx Auto screenshot"
+              src={image}
+              alt={`${title} screenshot`}
               fill
               className="object-cover object-top group-hover:scale-[1.015] transition-transform duration-700 ease-out"
             />
@@ -62,21 +88,12 @@ export default function CaseStudy() {
           >
             <h3 className="text-lg font-semibold mb-3">The problem</h3>
             <p className="text-sm text-muted leading-relaxed mb-5">
-              Lithuania&apos;s car market is dominated by outdated platforms with
-              poor UX, slow load times, and zero mobile optimization.
-              I wanted to prove a modern stack could do it better —
-              faster search, cleaner interface, real-time listings.
+              {problem}
             </p>
 
             <h3 className="text-lg font-semibold mb-3">Tech decisions</h3>
             <ul className="space-y-2.5">
-              {[
-                "Next.js with App Router for SSR and SEO out of the box",
-                "Supabase for real-time database, auth, and storage",
-                "Tailwind CSS for rapid, consistent UI development",
-                "TypeScript end-to-end for reliability",
-                "Deployed on Vercel edge network for sub-200ms TTFB",
-              ].map((item) => (
+              {techDecisions.map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-2 text-sm text-muted"
@@ -99,9 +116,7 @@ export default function CaseStudy() {
           >
             <h3 className="text-lg font-semibold mb-3">The result</h3>
             <p className="text-sm text-muted leading-relaxed mb-5">
-              A fully functional car marketplace with advanced filtering,
-              dealer dashboards, and mobile-first design. Lighthouse
-              performance score consistently above 95.
+              {result}
             </p>
 
             <div className="rounded-xl border border-border bg-surface/30 p-5">
@@ -109,14 +124,7 @@ export default function CaseStudy() {
                 Tech stack
               </p>
               <div className="flex flex-wrap gap-1.5">
-                {[
-                  "Next.js",
-                  "React",
-                  "Supabase",
-                  "TypeScript",
-                  "Tailwind CSS",
-                  "Vercel",
-                ].map((t) => (
+                {techStack.map((t) => (
                   <span
                     key={t}
                     className="text-[10px] px-2.5 py-1 rounded-md bg-background/50 border border-border text-muted"
@@ -128,7 +136,7 @@ export default function CaseStudy() {
             </div>
 
             <a
-              href="https://arx-auto.vercel.app/"
+              href={url}
               target="_blank"
               rel="noopener noreferrer"
               className="group mt-5 inline-flex items-center gap-1.5 text-sm text-accent-light hover:text-foreground transition-colors"
