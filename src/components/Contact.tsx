@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, Check } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 function LinkedinIcon({
   size = 14,
@@ -33,6 +34,7 @@ function LinkedinIcon({
 
 export default function Contact() {
   const [sent, setSent] = useState(false);
+  const { locale, t } = useI18n();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -63,15 +65,14 @@ export default function Contact() {
           className="text-center"
         >
           <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
-            Contact
+            {t.contact.label[locale]}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Have a project?{" "}
-            <span className="gradient-text">Let&apos;s talk.</span>
+            {t.contact.title1[locale]}{" "}
+            <span className="gradient-text">{t.contact.titleAccent[locale]}</span>
           </h2>
           <p className="text-muted max-w-md mx-auto mb-8 text-sm leading-relaxed">
-            Tell me what you need. I&apos;ll respond within 24 hours with an honest
-            assessment of whether I&apos;m the right fit.
+            {t.contact.subtitle[locale]}
           </p>
         </motion.div>
 
@@ -89,7 +90,7 @@ export default function Contact() {
                   htmlFor="name"
                   className="block text-[10px] text-muted mb-1.5 uppercase tracking-widest"
                 >
-                  Name
+                  {t.contact.nameLabel[locale]}
                 </label>
                 <input
                   type="text"
@@ -97,7 +98,7 @@ export default function Contact() {
                   name="name"
                   required
                   className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
-                  placeholder="Your name"
+                  placeholder={t.contact.namePlaceholder[locale]}
                 />
               </div>
               <div>
@@ -105,7 +106,7 @@ export default function Contact() {
                   htmlFor="email"
                   className="block text-[10px] text-muted mb-1.5 uppercase tracking-widest"
                 >
-                  Email
+                  {t.contact.emailLabel[locale]}
                 </label>
                 <input
                   type="email"
@@ -113,7 +114,7 @@ export default function Contact() {
                   name="email"
                   required
                   className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
-                  placeholder="you@company.com"
+                  placeholder={t.contact.emailPlaceholder[locale]}
                 />
               </div>
             </div>
@@ -122,7 +123,7 @@ export default function Contact() {
                 htmlFor="message"
                 className="block text-[10px] text-muted mb-1.5 uppercase tracking-widest"
               >
-                Message
+                {t.contact.messageLabel[locale]}
               </label>
               <textarea
                 id="message"
@@ -130,7 +131,7 @@ export default function Contact() {
                 required
                 rows={4}
                 className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
-                placeholder="Tell me about your project — what do you need, by when, and what's your budget range?"
+                placeholder={t.contact.messagePlaceholder[locale]}
               />
             </div>
             <button
@@ -141,11 +142,11 @@ export default function Contact() {
               {sent ? (
                 <>
                   <Check size={16} />
-                  Opening email client...
+                  {t.contact.sending[locale]}
                 </>
               ) : (
                 <>
-                  Send message
+                  {t.contact.send[locale]}
                   <ArrowRight
                     size={16}
                     className="group-hover:translate-x-0.5 transition-transform"
@@ -182,7 +183,7 @@ export default function Contact() {
               LinkedIn
             </a>
             <span className="hidden sm:block text-border">|</span>
-            <span>Vilnius, Lithuania</span>
+            <span>{t.contact.location[locale]}</span>
           </div>
         </motion.div>
       </div>

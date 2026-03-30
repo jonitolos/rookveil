@@ -3,34 +3,41 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
+
+interface CaseStudyData {
+  label: { pl: string; en: string };
+  title: { pl: string; en: string };
+  titleAccent: { pl: string; en: string };
+  subtitle: { pl: string; en: string };
+  problem: { pl: string; en: string };
+  techDecisions: { pl: readonly string[]; en: readonly string[] };
+  result: { pl: string; en: string };
+  problemTitle: { pl: string; en: string };
+  techTitle: { pl: string; en: string };
+  resultTitle: { pl: string; en: string };
+  techStackLabel: { pl: string; en: string };
+  viewSite: { pl: string; en: string };
+  visitSite: { pl: string; en: string };
+}
 
 interface CaseStudyProps {
   id: string;
-  label: string;
-  title: string;
-  titleAccent: string;
-  subtitle: string;
   url: string;
   image: string;
-  problem: string;
-  techDecisions: string[];
-  result: string;
   techStack: string[];
+  data: CaseStudyData;
 }
 
 export default function CaseStudy({
   id,
-  label,
-  title,
-  titleAccent,
-  subtitle,
   url,
   image,
-  problem,
-  techDecisions,
-  result,
   techStack,
+  data,
 }: CaseStudyProps) {
+  const { locale } = useI18n();
+
   return (
     <section id={id} className="py-20 md:py-24 px-6">
       <div className="max-w-6xl mx-auto">
@@ -42,13 +49,14 @@ export default function CaseStudy({
           className="text-center mb-12"
         >
           <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
-            {label}
+            {data.label[locale]}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            {title} <span className="gradient-text">{titleAccent}</span>
+            {data.title[locale]}{" "}
+            <span className="gradient-text">{data.titleAccent[locale]}</span>
           </h2>
           <p className="text-muted mt-3 max-w-lg mx-auto text-sm">
-            {subtitle}
+            {data.subtitle[locale]}
           </p>
         </motion.div>
 
@@ -66,14 +74,14 @@ export default function CaseStudy({
           <div className="aspect-[16/8] md:aspect-[2.4/1] relative bg-surface">
             <Image
               src={image}
-              alt={`${title} screenshot`}
+              alt={`${data.title[locale]} screenshot`}
               fill
               className="object-cover object-top group-hover:scale-[1.015] transition-transform duration-700 ease-out"
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
             <span className="text-sm text-foreground flex items-center gap-1.5">
-              Visit live site <ArrowUpRight size={14} />
+              {data.visitSite[locale]} <ArrowUpRight size={14} />
             </span>
           </div>
         </motion.a>
@@ -86,14 +94,14 @@ export default function CaseStudy({
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5 }}
           >
-            <h3 className="text-lg font-semibold mb-3">The problem</h3>
+            <h3 className="text-lg font-semibold mb-3">{data.problemTitle[locale]}</h3>
             <p className="text-sm text-muted leading-relaxed mb-5">
-              {problem}
+              {data.problem[locale]}
             </p>
 
-            <h3 className="text-lg font-semibold mb-3">Tech decisions</h3>
+            <h3 className="text-lg font-semibold mb-3">{data.techTitle[locale]}</h3>
             <ul className="space-y-2.5">
-              {techDecisions.map((item) => (
+              {data.techDecisions[locale].map((item) => (
                 <li
                   key={item}
                   className="flex items-start gap-2 text-sm text-muted"
@@ -114,14 +122,14 @@ export default function CaseStudy({
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold mb-3">The result</h3>
+            <h3 className="text-lg font-semibold mb-3">{data.resultTitle[locale]}</h3>
             <p className="text-sm text-muted leading-relaxed mb-5">
-              {result}
+              {data.result[locale]}
             </p>
 
             <div className="rounded-xl border border-border bg-surface/30 p-5">
               <p className="text-xs text-muted uppercase tracking-wider mb-3">
-                Tech stack
+                {data.techStackLabel[locale]}
               </p>
               <div className="flex flex-wrap gap-1.5">
                 {techStack.map((t) => (
@@ -141,7 +149,7 @@ export default function CaseStudy({
               rel="noopener noreferrer"
               className="group mt-5 inline-flex items-center gap-1.5 text-sm text-accent-light hover:text-foreground transition-colors"
             >
-              View live site
+              {data.viewSite[locale]}
               <ArrowUpRight
                 size={14}
                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"

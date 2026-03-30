@@ -3,8 +3,11 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import WireframeScene from "./WireframeScene";
+import { useI18n } from "@/lib/i18n";
 
 export default function Hero() {
+  const { locale, t } = useI18n();
+
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden grid-bg">
       {/* Central logo watermark */}
@@ -34,9 +37,9 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
         >
-          I build websites
+          {t.hero.headline1[locale]}
           <br />
-          that <span className="gradient-text">drive results</span>
+          <span className="gradient-text">{t.hero.headline2[locale]}</span>
         </motion.h1>
 
         {/* Identity line */}
@@ -46,9 +49,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="text-base md:text-lg text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          12 years in transport &amp; logistics, now building custom websites
-          for businesses that need more than a template.
-          Based in Vilnius, Lithuania.
+          {t.hero.subtitle[locale]}
         </motion.p>
 
         {/* CTAs */}
@@ -62,7 +63,7 @@ export default function Hero() {
             href="#contact"
             className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-accent hover:bg-accent-light text-white text-sm font-medium transition-all duration-200 shadow-lg shadow-accent/20 hover:shadow-accent/30"
           >
-            Start a project
+            {t.hero.cta1[locale]}
             <ArrowRight
               size={16}
               className="group-hover:translate-x-0.5 transition-transform"
@@ -72,7 +73,7 @@ export default function Hero() {
             href="#case-study"
             className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-border hover:border-accent/40 hover:bg-surface/50 text-sm font-medium text-muted hover:text-foreground transition-all duration-200"
           >
-            See my work
+            {t.hero.cta2[locale]}
           </a>
         </motion.div>
       </div>

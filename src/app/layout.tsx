@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { I18nProvider } from "@/lib/i18n";
 import "./globals.css";
 
 const inter = Inter({
@@ -93,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} antialiased`}>
+    <html lang="pl" className={`${inter.variable} antialiased`}>
       <head>
         <script
           type="application/ld+json"
@@ -101,7 +102,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-background text-foreground noise-bg">
-        {children}
+        <I18nProvider>{children}</I18nProvider>
         <Analytics />
         <SpeedInsights />
       </body>

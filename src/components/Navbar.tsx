@@ -4,23 +4,29 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-
-const links = [
-  { label: "Services", href: "#services" },
-  { label: "Work", href: "#case-study" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
-];
+import { useI18n, type Locale } from "@/lib/i18n";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { locale, setLocale, t } = useI18n();
+
+  const links = [
+    { label: t.nav.services[locale], href: "#services" },
+    { label: t.nav.work[locale], href: "#case-study" },
+    { label: t.nav.about[locale], href: "#about" },
+    { label: t.nav.contact[locale], href: "#contact" },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  function toggleLocale() {
+    setLocale(locale === "pl" ? "en" : "pl");
+  }
 
   return (
     <motion.header
@@ -58,22 +64,39 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+
+          {/* Language toggle */}
+          <button
+            onClick={toggleLocale}
+            className="text-xs font-medium px-2.5 py-1 rounded-md border border-border hover:border-accent/40 text-muted hover:text-foreground transition-all duration-200 uppercase tracking-wider"
+          >
+            {locale === "pl" ? "EN" : "PL"}
+          </button>
+
           <a
             href="#contact"
             className="text-sm px-4 py-2 rounded-lg bg-accent hover:bg-accent-light text-white transition-colors duration-200"
           >
-            Get in touch
+            {t.nav.getInTouch[locale]}
           </a>
         </div>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-muted hover:text-foreground transition-colors"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+        {/* Mobile: lang toggle + hamburger */}
+        <div className="flex md:hidden items-center gap-3">
+          <button
+            onClick={toggleLocale}
+            className="text-xs font-medium px-2 py-1 rounded-md border border-border text-muted uppercase tracking-wider"
+          >
+            {locale === "pl" ? "EN" : "PL"}
+          </button>
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="text-muted hover:text-foreground transition-colors"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -102,7 +125,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 className="text-sm px-4 py-2 rounded-lg bg-accent hover:bg-accent-light text-white transition-colors text-center"
               >
-                Get in touch
+                {t.nav.getInTouch[locale]}
               </a>
             </div>
           </motion.div>

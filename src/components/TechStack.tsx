@@ -1,140 +1,33 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useI18n } from "@/lib/i18n";
 
 const technologies = [
-  {
-    name: "Next.js",
-    logo: (
-      <svg viewBox="0 0 180 180" fill="none" className="w-8 h-8">
-        <mask id="m" maskUnits="userSpaceOnUse" x="0" y="0" width="180" height="180">
-          <circle cx="90" cy="90" r="90" fill="#fff" />
-        </mask>
-        <g mask="url(#m)">
-          <circle cx="90" cy="90" r="90" fill="currentColor" />
-          <path d="M149.508 157.52L69.142 54H54v71.97h12.114V69.384l73.885 95.461a90.304 90.304 0 009.509-7.325Z" fill="url(#a)" />
-          <path d="M115 54h12v72h-12z" fill="url(#b)" />
-        </g>
-        <defs>
-          <linearGradient id="a" x1="109" y1="116.5" x2="144.5" y2="160.5" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#fff" />
-            <stop offset="1" stopColor="#fff" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient id="b" x1="121" y1="54" x2="120.799" y2="106.875" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#fff" />
-            <stop offset="1" stopColor="#fff" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
-    name: "React",
-    logo: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-        <path d="M12 10.11c1.03 0 1.87.84 1.87 1.89 0 1-.84 1.85-1.87 1.85S10.13 13 10.13 12c0-1.05.84-1.89 1.87-1.89M7.37 20c.63.38 2.01-.2 3.6-1.7-.52-.59-1.03-1.23-1.51-1.9a22.7 22.7 0 01-2.4-.36c-.51 2.14-.32 3.61.31 3.96m.71-5.74l-.29-.51c-.11.29-.22.58-.29.86.27.06.57.11.88.16l-.3-.51m6.54-.76l.81-1.5-.81-1.5c-.3-.53-.62-1-.91-1.47C13.17 9 12.6 9 12 9c-.6 0-1.17 0-1.71.03-.29.47-.61.94-.91 1.47L8.57 12l.81 1.5c.3.53.62 1 .91 1.47.54.03 1.11.03 1.71.03.6 0 1.17 0 1.71-.03.29-.47.61-.94.91-1.47M12 6.78c-.19.22-.39.45-.59.72h1.18c-.2-.27-.4-.5-.59-.72m0 10.44c.19-.22.39-.45.59-.72h-1.18c.2.27.4.5.59.72M16.62 4c-.62-.38-2 .2-3.59 1.7.52.59 1.03 1.23 1.51 1.9.82.08 1.63.2 2.4.36.51-2.14.32-3.61-.32-3.96m-.7 5.74l.29.51c.11-.29.22-.58.29-.86-.27-.06-.57-.11-.88-.16l.3.51m1.45-7.05c1.47.84 1.63 3.05 1.01 5.63 2.54.75 4.37 1.99 4.37 3.68 0 1.69-1.83 2.93-4.37 3.68.62 2.58.46 4.79-1.01 5.63-1.46.84-3.45-.12-5.37-1.95-1.92 1.83-3.91 2.79-5.38 1.95-1.46-.84-1.62-3.05-1-5.63-2.54-.75-4.37-1.99-4.37-3.68 0-1.69 1.83-2.93 4.37-3.68-.62-2.58-.46-4.79 1-5.63 1.47-.84 3.46.12 5.38 1.95 1.92-1.83 3.91-2.79 5.37-1.95M17.08 12c.34.75.64 1.5.89 2.26 2.1-.63 3.28-1.53 3.28-2.26 0-.73-1.18-1.63-3.28-2.26-.25.76-.55 1.51-.89 2.26M6.92 12c-.34-.75-.64-1.5-.89-2.26-2.1.63-3.28 1.53-3.28 2.26 0 .73 1.18 1.63 3.28 2.26.25-.76.55-1.51.89-2.26m9 2.26l-.3.51c.31-.05.61-.1.88-.16-.07-.28-.18-.57-.29-.86l-.29.51m-2.89 4.04c1.59 1.5 2.97 2.08 3.59 1.7.64-.35.83-1.82.32-3.96-.77.16-1.58.28-2.4.36-.48.67-.99 1.31-1.51 1.9M8.08 9.74l.3-.51c-.31.05-.61.1-.88.16.07.28.18.57.29.86l.29-.51m2.89-4.04C9.38 4.2 8 3.62 7.37 4c-.63.35-.82 1.82-.31 3.96a22.7 22.7 0 012.4-.36c.48-.67.99-1.31 1.51-1.9z" />
-      </svg>
-    ),
-  },
-  {
-    name: "TypeScript",
-    logo: (
-      <svg viewBox="0 0 128 128" className="w-8 h-8">
-        <rect width="128" height="128" rx="10" fill="#3178c6" />
-        <path
-          d="M82.82 89.02c2.42 3.71 6.07 6.47 10.98 8.27l5.6-9.25c-3.05-1.57-5.36-3.46-6.89-5.66-1.54-2.2-2.3-5.1-2.3-8.7V42h-13.1v31.68c0 6.12-1.04 10.51-3.13 13.17-2.08 2.66-5.44 3.99-10.06 3.99-3.54 0-6.47-.94-8.8-2.82-2.33-1.88-4.05-4.5-5.17-7.85l-11.2 4.69c1.88 5.47 5 9.8 9.35 12.99 4.35 3.19 9.64 4.79 15.87 4.79 4.75 0 8.94-.95 12.57-2.84 3.19-1.66 5.71-4.07 7.54-6.76zM70.4 42H43.4v10.97h27v-10.97z"
-          fill="#fff"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Tailwind CSS",
-    logo: (
-      <svg viewBox="0 0 54 33" className="w-9 h-6">
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M27 0c-7.2 0-11.7 3.6-13.5 10.8 2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C30.744 13.09 33.808 16.2 40.5 16.2c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.514-3.522-2.004-5.147-3.653C36.756 3.11 33.692 0 27 0zM13.5 16.2C6.3 16.2 1.8 19.8 0 27c2.7-3.6 5.85-4.95 9.45-4.05 2.054.514 3.522 2.004 5.147 3.653C17.244 29.29 20.308 32.4 27 32.4c7.2 0 11.7-3.6 13.5-10.8-2.7 3.6-5.85 4.95-9.45 4.05-2.054-.514-3.522-2.004-5.147-3.653C23.256 19.31 20.192 16.2 13.5 16.2z"
-          fill="#06b6d4"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "Supabase",
-    logo: (
-      <svg viewBox="0 0 109 113" className="w-7 h-8">
-        <path
-          d="M63.708 110.284c-2.86 3.601-8.658 1.628-8.727-2.97l-1.007-67.251h45.22c8.19 0 12.758 9.46 7.665 15.874l-35.15 44.347z"
-          fill="url(#s1)"
-        />
-        <path
-          d="M63.708 110.284c-2.86 3.601-8.658 1.628-8.727-2.97l-1.007-67.251h45.22c8.19 0 12.758 9.46 7.665 15.874l-35.15 44.347z"
-          fill="url(#s2)"
-          fillOpacity=".2"
-        />
-        <path
-          d="M45.317 2.071c2.86-3.601 8.657-1.628 8.726 2.97l.442 67.251H9.83c-8.19 0-12.759-9.46-7.665-15.875L45.317 2.072z"
-          fill="#3ecf8e"
-        />
-        <defs>
-          <linearGradient id="s1" x1="53.974" y1="54.974" x2="94.163" y2="71.829" gradientUnits="userSpaceOnUse">
-            <stop stopColor="#249361" />
-            <stop offset="1" stopColor="#3ecf8e" />
-          </linearGradient>
-          <linearGradient id="s2" x1="36.156" y1="30.578" x2="54.484" y2="65.081" gradientUnits="userSpaceOnUse">
-            <stop />
-            <stop offset="1" stopOpacity="0" />
-          </linearGradient>
-        </defs>
-      </svg>
-    ),
-  },
-  {
-    name: "Vercel",
-    logo: (
-      <svg viewBox="0 0 76 65" className="w-8 h-7" fill="currentColor">
-        <path d="M37.5274 0L75.0548 65H0L37.5274 0Z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Node.js",
-    logo: (
-      <svg viewBox="0 0 256 289" className="w-7 h-8">
-        <path
-          d="M128 288.464c-3.975 0-7.685-1.06-11.13-2.915l-35.247-20.936c-5.3-2.915-2.65-3.975-1.06-4.505 7.155-2.385 8.48-2.915 15.9-7.155.795-.53 1.855-.265 2.65.265l27.032 16.166c1.06.53 2.385.53 3.18 0l105.74-61.218c1.06-.53 1.59-1.59 1.59-2.915V83.08c0-1.325-.53-2.385-1.59-2.915L129.325 19.213c-1.06-.53-2.385-.53-3.18 0L20.405 80.166c-1.06.53-1.59 1.855-1.59 2.915v122.17c0 1.06.53 2.385 1.59 2.915l28.887 16.695c15.635 7.95 25.44-1.325 25.44-10.6V93.68c0-1.59 1.325-3.18 3.18-3.18h13.25c1.59 0 3.18 1.325 3.18 3.18v120.58c0 20.936-11.395 33.126-31.27 33.126-6.095 0-10.865 0-24.38-6.625l-27.827-15.9C4.24 221.146 0 214.256 0 206.836V84.666c0-7.42 4.24-14.31 11.13-17.755L116.87 5.693c6.625-3.71 15.635-3.71 22.26 0L244.87 66.91c6.89 3.71 11.13 10.335 11.13 17.755v122.17c0 7.42-4.24 14.31-11.13 17.755L139.13 285.808c-3.445 1.855-7.42 2.656-11.13 2.656"
-          fill="#539e43"
-        />
-      </svg>
-    ),
-  },
-  {
-    name: "PostgreSQL",
-    logo: (
-      <svg viewBox="0 0 25.6 25.6" className="w-8 h-8">
-        <path
-          d="M18.983 18.636c.163-1.357.114-1.555 1.124-1.336l.257.023c.777.035 1.793-.125 2.4-.404 1.285-.588 2.046-1.564.78-1.306-2.895.59-3.39-.4-3.39-.4 3.35-4.963 4.75-11.263 3.543-12.797C22.37.474 18.612 1.49 18.562 1.52l-.032.006c-.587-.12-1.245-.203-1.98-.213-1.339-.018-2.353.355-3.124.94 0 0-9.5-3.916-9.053 4.926.095 1.88 2.724 14.229 5.86 10.499 1.146-1.365 2.253-2.52 2.253-2.52.55.365 1.21.552 1.904.484l.054-.047c-.017.178-.01.352.024.553-.888.99-.627 1.164-2.404 1.528-1.798.368-.742 1.025-.053 1.197.838.21 2.782.506 4.098-1.325l-.048.193c.32.256.545 1.667.507 2.945-.038 1.278-.065 2.16.193 2.848.258.688.517 2.238 2.716 1.778 1.836-.384 3.244-1.166 3.397-7.572"
-          fill="#336791"
-        />
-      </svg>
-    ),
-  },
+  { name: "Next.js" },
+  { name: "React" },
+  { name: "TypeScript" },
+  { name: "Tailwind CSS" },
+  { name: "Supabase" },
+  { name: "Vercel" },
+  { name: "Node.js" },
+  { name: "PostgreSQL" },
 ];
 
 export default function TechStack() {
+  const { locale, t } = useI18n();
+
   return (
-    <section className="py-16 px-6 border-t border-b border-border">
+    <section className="py-14 px-6 border-t border-b border-border">
       <div className="max-w-4xl mx-auto">
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center text-xs uppercase tracking-[0.2em] text-muted mb-8"
+          className="text-center text-xs uppercase tracking-[0.2em] text-muted mb-6"
         >
-          Built with modern tools
+          {t.techStack.label[locale]}
         </motion.p>
 
         <motion.div
@@ -142,25 +35,19 @@ export default function TechStack() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="grid grid-cols-4 md:grid-cols-8 gap-6 md:gap-8 items-center justify-items-center"
+          className="flex flex-wrap justify-center gap-3"
         >
           {technologies.map((tech, i) => (
-            <motion.div
+            <motion.span
               key={tech.name}
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="group flex flex-col items-center gap-2 text-muted/50 hover:text-muted transition-colors duration-300 cursor-default"
-              title={tech.name}
+              className="px-4 py-2 rounded-lg border border-border bg-surface/30 text-sm text-muted hover:text-foreground hover:border-accent/30 transition-all duration-200 cursor-default"
             >
-              <div className="opacity-40 group-hover:opacity-70 transition-opacity duration-300">
-                {tech.logo}
-              </div>
-              <span className="text-[9px] uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {tech.name}
-              </span>
-            </motion.div>
+              {tech.name}
+            </motion.span>
           ))}
         </motion.div>
       </div>

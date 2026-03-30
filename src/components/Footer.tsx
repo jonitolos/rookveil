@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mail, Phone } from "lucide-react";
 import Image from "next/image";
+import { useI18n } from "@/lib/i18n";
 
 function LinkedinIcon({ size = 16, className = "" }: { size?: number; className?: string }) {
   return (
@@ -26,6 +27,15 @@ function LinkedinIcon({ size = 16, className = "" }: { size?: number; className?
 }
 
 export default function Footer() {
+  const { locale, t } = useI18n();
+
+  const links = [
+    { label: t.nav.services[locale], href: "#services" },
+    { label: t.nav.work[locale], href: "#case-study" },
+    { label: t.nav.about[locale], href: "#about" },
+    { label: t.nav.contact[locale], href: "#contact" },
+  ];
+
   return (
     <motion.footer
       initial={{ opacity: 0 }}
@@ -44,34 +54,19 @@ export default function Footer() {
               height={24}
               className="rounded-sm opacity-60"
             />
-            &copy; {new Date().getFullYear()} Rookveil. All rights reserved.
+            &copy; {new Date().getFullYear()} Rookveil. {t.footer.rights[locale]}
           </div>
 
           <div className="flex items-center gap-6 text-sm text-muted">
-            <a
-              href="#services"
-              className="hover:text-foreground transition-colors"
-            >
-              Services
-            </a>
-            <a
-              href="#work"
-              className="hover:text-foreground transition-colors"
-            >
-              Work
-            </a>
-            <a
-              href="#about"
-              className="hover:text-foreground transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#contact"
-              className="hover:text-foreground transition-colors"
-            >
-              Contact
-            </a>
+            {links.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </a>
+            ))}
           </div>
 
           <div className="flex items-center gap-4 text-muted">
@@ -102,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-6 pt-4 border-t border-border text-center text-xs text-muted/60">
-          Vilnius, Lithuania
+          {t.footer.location[locale]}
         </div>
       </div>
     </motion.footer>
