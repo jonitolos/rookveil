@@ -1,10 +1,16 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { useState, type FormEvent } from "react";
+import { motion } from "framer-motion";
 import { ArrowRight, Mail, Phone, Check } from "lucide-react";
 
-function LinkedinIcon({ size = 14, className = "" }: { size?: number; className?: string }) {
+function LinkedinIcon({
+  size = 14,
+  className = "",
+}: {
+  size?: number;
+  className?: string;
+}) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +39,8 @@ export default function Contact() {
     const form = e.currentTarget;
     const name = (form.elements.namedItem("name") as HTMLInputElement).value;
     const email = (form.elements.namedItem("email") as HTMLInputElement).value;
-    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value;
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement)
+      .value;
 
     const subject = encodeURIComponent(`New project inquiry from ${name}`);
     const body = encodeURIComponent(
@@ -59,11 +66,12 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Let&apos;s build something{" "}
-            <span className="gradient-text">remarkable</span>
+            Have a project?{" "}
+            <span className="gradient-text">Let&apos;s talk.</span>
           </h2>
           <p className="text-muted max-w-md mx-auto mb-8 text-sm leading-relaxed">
-            Have a project in mind? Drop us a line and we&apos;ll get back to you within 24 hours.
+            Tell me what you need. I&apos;ll respond within 24 hours with an honest
+            assessment of whether I&apos;m the right fit.
           </p>
         </motion.div>
 
@@ -74,10 +82,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="rounded-2xl border border-border bg-surface/40 p-6 md:p-8"
         >
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-4"
-          >
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label
@@ -125,7 +130,7 @@ export default function Contact() {
                 required
                 rows={4}
                 className="w-full bg-background border border-border rounded-lg px-4 py-2.5 text-sm text-foreground placeholder:text-muted/40 focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
-                placeholder="Tell us about your project..."
+                placeholder="Tell me about your project — what do you need, by when, and what's your budget range?"
               />
             </div>
             <button

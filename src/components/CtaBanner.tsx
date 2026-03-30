@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react";
 export default function CtaBanner() {
   return (
     <section className="py-16 px-6 relative overflow-hidden">
-      {/* Glow */}
       <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-cyan-500/5 pointer-events-none" />
 
       <motion.div
@@ -19,10 +18,11 @@ export default function CtaBanner() {
         <div className="rounded-2xl border border-border bg-surface/40 backdrop-blur-sm p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
           <div className="flex-1 text-center md:text-left">
             <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-2">
-              Ready to elevate your online presence?
+              Need a website? I can help.
             </h3>
             <p className="text-sm text-muted">
-              Let&apos;s discuss your project and see how we can help your business grow.
+              Projects typically start from <span className="text-foreground font-medium">€500</span>.
+              Tell me what you need and I&apos;ll get back to you within 24 hours.
             </p>
           </div>
           <a

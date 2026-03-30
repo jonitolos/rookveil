@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import TechStack from "@/components/TechStack";
 import Process from "@/components/Process";
+import CaseStudy from "@/components/CaseStudy";
 import Work from "@/components/Work";
 import About from "@/components/About";
 import CtaBanner from "@/components/CtaBanner";
@@ -19,6 +20,7 @@ export default function Home() {
       <Services />
       <TechStack />
       <Process />
+      <CaseStudy />
       <Work />
       <About />
       <CtaBanner />

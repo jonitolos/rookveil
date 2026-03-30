@@ -8,7 +8,7 @@ const values = [
     icon: Code2,
     title: "Craft over code",
     description:
-      "We don't just write code — we engineer experiences. Every decision is deliberate, every detail matters.",
+      "I don't just write code — I engineer experiences. Every decision is deliberate, every detail matters.",
   },
   {
     icon: Rocket,
@@ -18,9 +18,9 @@ const values = [
   },
   {
     icon: Users,
-    title: "Partnership, not projects",
+    title: "Direct communication",
     description:
-      "We work as an extension of your team. Long-term relationships over one-off transactions.",
+      "No project managers, no middlemen. You talk to the person building your site. That's how things get done right.",
   },
 ];
 
@@ -42,28 +42,28 @@ export default function About() {
               About
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-5">
-              A studio built on{" "}
-              <span className="gradient-text">obsession with quality</span>
+              Not an agency.{" "}
+              <span className="gradient-text">One developer, full focus.</span>
             </h2>
             <div className="space-y-3.5 text-muted text-sm leading-relaxed">
               <p>
-                Rookveil is a boutique web development studio based in
-                Vilnius, Lithuania, founded by Jonas Losis. With over 12
-                years of experience in the transport and logistics industry,
-                Jonas brings a rare combination of deep business understanding
-                and modern web development skills.
+                I&apos;m Jonas Losis. I spent 12 years working in transport and
+                logistics — managing operations, solving real business
+                problems, and learning what companies actually need from
+                their digital presence.
               </p>
               <p>
-                That logistics background means we understand the needs of
-                businesses that move things — fleet management dashboards,
-                customer-facing booking portals, operational tools. We speak
-                the language before writing a single line of code.
+                That background means I understand your business before
+                writing a single line of code. Fleet management dashboards,
+                customer-facing booking portals, company websites that
+                actually generate leads — I&apos;ve seen what works and what
+                doesn&apos;t from the inside.
               </p>
               <p>
-                We specialize in the modern web stack — Next.js, React,
-                Supabase, and Tailwind CSS — to deliver blazing-fast websites
-                that don&apos;t just look great but perform at the highest level.
-                No templates, no shortcuts — just clean, custom code.
+                Now I build custom websites with the modern stack — Next.js,
+                React, Supabase, Tailwind CSS. No templates, no page
+                builders. Just clean code, fast sites, and direct
+                communication.
               </p>
             </div>
           </motion.div>

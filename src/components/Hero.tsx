@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import WireframeScene from "./WireframeScene";
 
 export default function Hero() {
@@ -13,48 +13,37 @@ export default function Hero() {
       {/* Ambient glow orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-cyan-500/6 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-1/2 left-1/6 w-[200px] h-[200px] bg-violet-400/4 rounded-full blur-[80px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-border bg-surface/60 backdrop-blur-sm text-xs text-muted mb-8"
-        >
-          <Sparkles size={12} className="text-accent-light" />
-          Web Development Studio
-        </motion.div>
-
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.7, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
         >
-          We build websites
+          I build websites
           <br />
           that <span className="gradient-text">drive results</span>
         </motion.h1>
 
-        {/* Subtitle */}
+        {/* Identity line — not a stat, a story */}
         <motion.p
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.7, delay: 0.45 }}
-          className="text-base md:text-lg text-muted max-w-xl mx-auto mb-10 leading-relaxed"
+          transition={{ duration: 0.7, delay: 0.35 }}
+          className="text-base md:text-lg text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          From concept to launch, we craft fast, modern web experiences
-          that elevate your brand and convert visitors into customers.
+          12 years in transport &amp; logistics, now building custom websites
+          for businesses that need more than a template.
+          Based in Vilnius, Lithuania.
         </motion.p>
 
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          transition={{ duration: 0.7, delay: 0.5 }}
           className="flex flex-col sm:flex-row gap-3 justify-center"
         >
           <a
@@ -68,34 +57,11 @@ export default function Hero() {
             />
           </a>
           <a
-            href="#work"
+            href="#case-study"
             className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-border hover:border-accent/40 hover:bg-surface/50 text-sm font-medium text-muted hover:text-foreground transition-all duration-200"
           >
-            View our work
+            See my work
           </a>
-        </motion.div>
-
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
-          className="mt-16 flex items-center justify-center gap-4 sm:gap-12 flex-wrap"
-        >
-          <div className="text-center min-w-0">
-            <div className="text-lg sm:text-2xl font-bold gradient-text">12+</div>
-            <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">Years in tech</div>
-          </div>
-          <div className="w-px h-8 bg-border hidden sm:block" />
-          <div className="text-center min-w-0">
-            <div className="text-lg sm:text-2xl font-bold gradient-text">Next.js</div>
-            <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">React &amp; Supabase</div>
-          </div>
-          <div className="w-px h-8 bg-border hidden sm:block" />
-          <div className="text-center min-w-0">
-            <div className="text-lg sm:text-2xl font-bold gradient-text">Vilnius</div>
-            <div className="text-[10px] sm:text-[11px] text-muted mt-0.5">Lithuania-based</div>
-          </div>
         </motion.div>
       </div>
 

@@ -7,30 +7,26 @@ const steps = [
   {
     icon: MessageSquare,
     step: "01",
-    title: "Discovery",
-    description:
-      "We dive deep into your goals, audience, and vision to understand the problem first.",
+    title: "We talk",
+    description: "You tell me what you need, I ask the right questions.",
   },
   {
     icon: PenTool,
     step: "02",
-    title: "Design",
-    description:
-      "Wireframes and polished mockups. We iterate until it feels right before writing code.",
+    title: "I design",
+    description: "Clean mockups. We iterate until it feels right.",
   },
   {
     icon: Code,
     step: "03",
-    title: "Development",
-    description:
-      "Built with precision using the latest web technologies. Clean, tested, and optimized.",
+    title: "I build",
+    description: "Custom code, tested and optimized for speed.",
   },
   {
     icon: Rocket,
     step: "04",
-    title: "Launch & Grow",
-    description:
-      "Seamless deployment, monitoring, and ongoing support. We stay by your side.",
+    title: "You launch",
+    description: "Your site goes live. I stay available for support.",
   },
 ];
 
@@ -51,40 +47,47 @@ export default function Process() {
             Process
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            How we <span className="gradient-text">work</span>
+            How it <span className="gradient-text">works</span>
           </h2>
-          <p className="text-muted mt-3 max-w-md mx-auto text-sm">
-            A streamlined process refined over years of delivering successful
-            projects.
-          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-          {steps.map((step, i) => (
-            <motion.div
-              key={step.step}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.45,
-                delay: i * 0.08,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-              className="group relative p-5 rounded-xl border border-border bg-surface/30 hover:bg-surface-light hover:border-accent/20 transition-all duration-300"
-            >
-              <span className="text-3xl font-bold text-border/50 absolute top-3 right-4 group-hover:text-accent/15 transition-colors">
-                {step.step}
-              </span>
-              <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
-                <step.icon size={16} className="text-accent-light" />
-              </div>
-              <h3 className="text-sm font-semibold mb-1.5">{step.title}</h3>
-              <p className="text-xs text-muted leading-relaxed">
-                {step.description}
-              </p>
-            </motion.div>
-          ))}
+        {/* Horizontal timeline */}
+        <div className="relative">
+          {/* Connecting line */}
+          <div className="hidden md:block absolute top-6 left-[12.5%] right-[12.5%] h-px bg-border" />
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-0">
+            {steps.map((step, i) => (
+              <motion.div
+                key={step.step}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.45,
+                  delay: i * 0.1,
+                }}
+                className="relative flex md:flex-col items-start md:items-center text-left md:text-center gap-4 md:gap-0 px-4"
+              >
+                {/* Step dot */}
+                <div className="relative z-10 w-12 h-12 md:w-12 md:h-12 rounded-full border-2 border-border bg-background flex items-center justify-center flex-shrink-0 md:mb-5">
+                  <step.icon size={18} className="text-accent-light" />
+                </div>
+
+                <div>
+                  <span className="text-[10px] text-accent-light/60 uppercase tracking-widest">
+                    Step {step.step}
+                  </span>
+                  <h3 className="text-sm font-semibold mt-0.5 mb-1">
+                    {step.title}
+                  </h3>
+                  <p className="text-xs text-muted leading-relaxed max-w-[200px] md:mx-auto">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

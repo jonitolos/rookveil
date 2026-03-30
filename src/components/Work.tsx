@@ -6,24 +6,13 @@ import Image from "next/image";
 
 const projects = [
   {
-    title: "Arx Auto",
-    url: "https://arx-auto.vercel.app/",
-    category: "Automotive Marketplace",
-    description:
-      "A car marketplace platform with vehicle listings, advanced search and filtering, and dealer tools. Built with server-side rendering, real-time data via Supabase, and optimized for SEO.",
-    tech: ["Next.js", "Supabase", "Tailwind CSS", "TypeScript"],
-    image: "/work/arx-auto.svg",
-    gradient: "from-violet-500/20 to-blue-500/20",
-  },
-  {
     title: "Sintorio",
     url: "https://www.sintorio.com/",
     category: "AI Video Processing",
     description:
-      "An AI-powered video processing platform that lets users clip, edit, and transform video content. Python backend handles the heavy lifting while a clean React frontend keeps the experience smooth.",
+      "An AI-powered video processing platform I built and operate. Python backend handles the heavy lifting, React frontend keeps the experience smooth.",
     tech: ["Next.js", "Python", "AI/ML", "Tailwind CSS"],
     image: "/work/sintorio.svg",
-    gradient: "from-cyan-500/20 to-emerald-500/20",
   },
 ];
 
@@ -39,80 +28,72 @@ export default function Work() {
           className="text-center mb-12"
         >
           <p className="text-xs uppercase tracking-[0.2em] text-accent-light mb-3">
-            Portfolio
+            Also built
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Selected <span className="gradient-text">work</span>
+            Other <span className="gradient-text">projects</span>
           </h2>
           <p className="text-muted mt-3 max-w-md mx-auto text-sm">
-            Real projects, real results. Here&apos;s a look at what we&apos;ve built.
+            Platforms I built and operate — not client work, but proof of what I can deliver.
           </p>
         </motion.div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {projects.map((project, i) => (
             <motion.a
               key={project.title}
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.6, delay: i * 0.12 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group block relative rounded-2xl border border-border bg-surface/40 hover:border-accent/30 transition-all duration-300 overflow-hidden"
             >
-              {/* Gradient background */}
-              <div
-                className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
-              />
+              {/* Screenshot */}
+              <div className="relative overflow-hidden">
+                <div className="aspect-[16/9] md:aspect-[2.8/1] relative">
+                  <Image
+                    src={project.image}
+                    alt={`${project.title} screenshot`}
+                    fill
+                    className="object-cover object-top group-hover:scale-[1.015] transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#111111] to-transparent" />
+                </div>
+              </div>
 
-              <div className="relative">
-                {/* Screenshot */}
-                <div className="relative overflow-hidden">
-                  <div className="aspect-[16/9] md:aspect-[2.4/1] relative">
-                    <Image
-                      src={project.image}
-                      alt={`${project.title} screenshot`}
-                      fill
-                      className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-out"
-                    />
-                    {/* Fade overlay at bottom */}
-                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#111111] to-transparent" />
+              {/* Info bar */}
+              <div className="relative p-5 md:p-6 -mt-8 flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
+                <div className="flex-1">
+                  <span className="text-[10px] text-accent-light font-medium uppercase tracking-widest">
+                    {project.category}
+                  </span>
+                  <h3 className="text-xl md:text-2xl font-bold mt-1 mb-1.5 group-hover:text-accent-light transition-colors">
+                    {project.title}
+                  </h3>
+                  <p className="text-muted text-sm leading-relaxed max-w-xl">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {project.tech.map((t) => (
+                      <span
+                        key={t}
+                        className="text-[10px] px-2 py-0.5 rounded-md bg-background/50 border border-border text-muted"
+                      >
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                {/* Info bar */}
-                <div className="relative p-5 md:p-6 -mt-8 flex flex-col md:flex-row md:items-end gap-4 md:gap-8">
-                  <div className="flex-1">
-                    <span className="text-[10px] text-accent-light font-medium uppercase tracking-widest">
-                      {project.category}
-                    </span>
-                    <h3 className="text-xl md:text-2xl font-bold mt-1 mb-1.5 group-hover:text-accent-light transition-colors">
-                      {project.title}
-                    </h3>
-                    <p className="text-muted text-sm leading-relaxed max-w-xl">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 mt-3">
-                      {project.tech.map((t) => (
-                        <span
-                          key={t}
-                          className="text-[10px] px-2 py-0.5 rounded-md bg-background/50 border border-border text-muted"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="flex-shrink-0 mb-1">
-                    <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-accent-light group-hover:bg-accent/10 transition-all duration-300">
-                      <ArrowUpRight
-                        size={18}
-                        className="text-muted group-hover:text-accent-light transition-colors"
-                      />
-                    </div>
+                <div className="flex-shrink-0 mb-1">
+                  <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center group-hover:border-accent-light group-hover:bg-accent/10 transition-all duration-300">
+                    <ArrowUpRight
+                      size={18}
+                      className="text-muted group-hover:text-accent-light transition-colors"
+                    />
                   </div>
                 </div>
               </div>

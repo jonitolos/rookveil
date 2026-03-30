@@ -82,12 +82,12 @@ export default function Services() {
             What you get
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Every website we build{" "}
+            Every website I build{" "}
             <span className="gradient-text">includes</span>
           </h2>
           <p className="text-muted mt-3 max-w-md mx-auto text-sm">
-            One service, done right. A fully custom website built with modern
-            technology — no shortcuts, no compromises.
+            One service, done right. A fully custom website — no shortcuts,
+            no compromises.
           </p>
         </motion.div>
 
