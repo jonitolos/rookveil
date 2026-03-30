@@ -26,7 +26,7 @@ export default function Home() {
         titleAccent="car marketplace"
         subtitle="A platform I designed, built, and operate. Here's how and why."
         url="https://arx-auto.vercel.app/"
-        image="/work/arx-auto.svg"
+        image="/work/arx-auto.png"
         problem="Lithuania's car market is dominated by outdated platforms with poor UX, slow load times, and zero mobile optimization. I wanted to prove a modern stack could do it better — faster search, cleaner interface, real-time listings."
         techDecisions={[
           "Next.js with App Router for SSR and SEO out of the box",
@@ -52,7 +52,7 @@ export default function Home() {
         titleAccent="AI video processing"
         subtitle="An AI-powered platform I built and operate. From raw footage to viral shorts, fully automated."
         url="https://www.sintorio.com/"
-        image="/work/sintorio.svg"
+        image="/work/sintorio.png"
         problem="Content creators spend hours manually clipping, editing, and syncing video highlights. The process is repetitive, time-consuming, and doesn't scale. A 1-hour video can take 40+ minutes to process on cloud-based tools — and the results still need manual tweaking."
         techDecisions={[
           "Next.js frontend with React for a clean editing interface",
