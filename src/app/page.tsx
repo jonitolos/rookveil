@@ -22,26 +22,30 @@ export default function Home() {
       <CaseStudy
         id="case-study"
         label="Case study"
-        title="Arx Auto —"
-        titleAccent="car marketplace"
-        subtitle="A platform I designed, built, and operate. Here's how and why."
-        url="https://arx-auto.vercel.app/"
+        title="ADN.lt —"
+        titleAccent="free car listings"
+        subtitle="A full car marketplace I designed, built, and operate. Here's how and why."
+        url="https://adn.lt"
         image="/work/arx-auto.png"
-        problem="Lithuania's car market is dominated by outdated platforms with poor UX, slow load times, and zero mobile optimization. I wanted to prove a modern stack could do it better — faster search, cleaner interface, real-time listings."
+        problem="Lithuania's car market is dominated by outdated platforms with poor UX, slow load times, and clunky listing processes. I wanted to prove a modern stack could do it better — free listings, one-click import from Autoplius/Autogidas/Autobilis, AI-powered vehicle analysis, and a search experience that actually works on mobile."
         techDecisions={[
           "Next.js with App Router for SSR and SEO out of the box",
-          "Supabase for real-time database, auth, and storage",
+          "Supabase for real-time database, auth, storage, and user accounts",
+          "AI Vision engine for automated vehicle condition assessment from photos",
+          "One-click listing import from competing portals (Autoplius, Autogidas, Autobilis)",
+          "Free VIN report integration for every listing",
           "Tailwind CSS for rapid, consistent UI development",
           "TypeScript end-to-end for reliability",
           "Deployed on Vercel edge network for sub-200ms TTFB",
         ]}
-        result="A fully functional car marketplace with advanced filtering, dealer dashboards, and mobile-first design. Lighthouse performance score consistently above 95."
+        result="A fully functional car marketplace with 50+ listings, free posting, AI-powered car inspection (ADN Vision), one-click import from competing portals, advanced search across cars, motorcycles, heavy transport, agriculture, and parts. Lighthouse performance score consistently above 95."
         techStack={[
           "Next.js",
           "React",
           "Supabase",
           "TypeScript",
           "Tailwind CSS",
+          "OpenAI",
           "Vercel",
         ]}
       />
