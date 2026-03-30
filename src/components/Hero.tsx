@@ -10,6 +10,11 @@ export default function Hero() {
       {/* 3D wireframe scene */}
       <WireframeScene />
 
+      {/* Central logo watermark */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-[0.04]">
+        <img src="/logo.png" alt="" className="w-full h-full object-contain" />
+      </div>
+
       {/* Ambient glow orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/8 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-cyan-500/6 rounded-full blur-[100px] pointer-events-none" />
