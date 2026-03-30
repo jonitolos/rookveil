@@ -76,7 +76,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-4 text-muted">
             <a
-              href="mailto:jonas@rookveil.lt"
+              href="mailto:hello@rookveil.lt"
               className="hover:text-foreground transition-colors"
               aria-label="Email"
             >

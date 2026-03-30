@@ -66,7 +66,7 @@ const jsonLd = {
     addressCountry: "LT",
   },
   telephone: "+37067308538",
-  email: "jonas@rookveil.lt",
+  email: "hello@rookveil.lt",
   sameAs: ["https://www.linkedin.com/in/jonas-losis/"],
   areaServed: {
     "@type": "GeoCircle",

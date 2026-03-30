@@ -46,7 +46,7 @@ export default function Contact() {
     const body = encodeURIComponent(
       `Name: ${name}\nEmail: ${email}\n\n${message}`
     );
-    window.location.href = `mailto:jonas@rookveil.lt?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:hello@rookveil.lt?subject=${subject}&body=${body}`;
     setSent(true);
   }
 
@@ -157,11 +157,11 @@ export default function Contact() {
 
           <div className="mt-6 pt-5 border-t border-border flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-xs text-muted">
             <a
-              href="mailto:jonas@rookveil.lt"
+              href="mailto:hello@rookveil.lt"
               className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
               <Mail size={12} className="text-accent-light" />
-              jonas@rookveil.lt
+              hello@rookveil.lt
             </a>
             <span className="hidden sm:block text-border">|</span>
             <a
