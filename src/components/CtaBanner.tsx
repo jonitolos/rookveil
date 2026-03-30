@@ -17,9 +17,9 @@ export default function CtaBanner() {
       >
         <div className="rounded-2xl border border-border bg-surface/40 backdrop-blur-sm p-8 md:p-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
           <div className="flex-1 text-center md:text-left">
-            <h3 className="text-xl md:text-2xl font-bold tracking-tight mb-2">
+            <h2 className="text-xl md:text-2xl font-bold tracking-tight mb-2">
               Need a website? I can help.
-            </h3>
+            </h2>
             <p className="text-sm text-muted">
               Projects typically start from <span className="text-foreground font-medium">€500</span>.
               Tell me what you need and I&apos;ll get back to you within 24 hours.

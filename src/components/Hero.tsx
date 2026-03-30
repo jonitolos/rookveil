@@ -11,8 +11,8 @@ export default function Hero() {
       <WireframeScene />
 
       {/* Central logo watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] pointer-events-none opacity-[0.04]">
-        <img src="/logo.png" alt="" className="w-full h-full object-contain" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[450px] md:h-[450px] pointer-events-none z-[1] opacity-[0.06]">
+        <img src="/logo.png" alt="" className="w-full h-full object-contain brightness-150" />
       </div>
 
       {/* Ambient glow orbs */}

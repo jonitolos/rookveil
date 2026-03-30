@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     title: "Rookveil — Web Development Studio",
     description:
       "Boutique web development studio crafting custom, high-performance websites.",
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "https://rookveil.lt",
