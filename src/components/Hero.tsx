@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden grid-bg">
       {/* Central logo watermark */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1] opacity-40">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1] opacity-20">
         <img src="/logo.png" alt="" className="w-full h-full object-contain brightness-150" />
       </div>
 
