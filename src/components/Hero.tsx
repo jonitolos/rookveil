@@ -7,9 +7,6 @@ import WireframeScene from "./WireframeScene";
 export default function Hero() {
   return (
     <section className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden grid-bg">
-      {/* 3D wireframe scene */}
-      <WireframeScene />
-
       {/* Central logo watermark */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1] opacity-50">
         <img src="/logo.png" alt="" className="w-full h-full object-contain brightness-150" />
@@ -20,11 +17,21 @@ export default function Hero() {
       <div className="absolute bottom-1/4 right-1/4 w-[350px] h-[350px] bg-cyan-500/6 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+        {/* 3D wireframe — above headline */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.1 }}
+          className="relative w-full h-[200px] sm:h-[250px] md:h-[300px] mb-6"
+        >
+          <WireframeScene />
+        </motion.div>
+
         {/* Headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
           className="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight leading-[1.08] mb-6"
         >
           I build websites
@@ -32,11 +39,11 @@ export default function Hero() {
           that <span className="gradient-text">drive results</span>
         </motion.h1>
 
-        {/* Identity line — not a stat, a story */}
+        {/* Identity line */}
         <motion.p
           initial={{ opacity: 0, y: 20, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.45 }}
           className="text-base md:text-lg text-muted max-w-2xl mx-auto mb-10 leading-relaxed"
         >
           12 years in transport &amp; logistics, now building custom websites
@@ -48,7 +55,7 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
+          transition={{ duration: 0.7, delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-3 justify-center"
         >
           <a
