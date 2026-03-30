@@ -25,7 +25,7 @@ export default function Home() {
         title="ADN.lt —"
         titleAccent="free car listings"
         subtitle="A full car marketplace I designed, built, and operate. Here's how and why."
-        url="https://adn.lt"
+        url="https://arx-auto.vercel.app/"
         image="/work/arx-auto.png"
         problem="Lithuania's car market is dominated by outdated platforms with poor UX, slow load times, and clunky listing processes. I wanted to prove a modern stack could do it better — free listings, one-click import from Autoplius/Autogidas/Autobilis, AI-powered vehicle analysis, and a search experience that actually works on mobile."
         techDecisions={[
