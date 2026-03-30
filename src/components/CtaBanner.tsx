@@ -25,7 +25,7 @@ export default function CtaBanner() {
             </h2>
             <p className="text-sm text-muted">
               {t.cta.subtitle[locale]}{" "}
-              <span className="text-foreground font-medium">€500</span>.{" "}
+              <span className="text-foreground font-medium">2 150 PLN</span>.{" "}
               {t.cta.subtitleEnd[locale]}
             </p>
           </div>
