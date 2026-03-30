@@ -11,7 +11,7 @@ export default function Hero() {
       <WireframeScene />
 
       {/* Central logo watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] md:w-[450px] md:h-[450px] pointer-events-none z-[1] opacity-[0.06]">
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-[1] opacity-50">
         <img src="/logo.png" alt="" className="w-full h-full object-contain brightness-150" />
       </div>
 
