@@ -26,7 +26,7 @@ export default function Home() {
       <Process />
       <CaseStudy
         id="case-study"
-        url="https://arx-auto.vercel.app/"
+        url="https://adn.lt"
         image="/work/arx-auto.png"
         techStack={["Next.js", "React", "Supabase", "TypeScript", "Tailwind CSS", "OpenAI", "Vercel"]}
         data={t.caseAdn}
